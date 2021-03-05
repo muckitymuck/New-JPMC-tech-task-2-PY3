@@ -1,0 +1,31 @@
+From 39335e8a078cabfc312df8de9f40a78dda51b735 Mon Sep 17 00:00:00 2001
+From: muckity <andrewgoldstein@hotmail.com>
+Date: Thu, 4 Mar 2021 22:44:24 -0600
+Subject: [PATCH] working now
+
+---
+ src/Graph.tsx | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/Graph.tsx b/src/Graph.tsx
+index 581f5de..183b780 100644
+--- a/src/Graph.tsx
++++ b/src/Graph.tsx
+@@ -48,12 +48,13 @@ class Graph extends Component<IProps, {}> {
+       // Load the `table` in the `<perspective-viewer>` DOM reference.
+ 
+       // Add more Perspective configurations here.
+-      // elem.load(this.table);
++      // 
+       elem.setAttribute('view', 'y_line');
+       elem.setAttribute('column-pivots', '["stock"]');
+       elem.setAttribute('row-pivots', '["timestamp"]');
+       elem.setAttribute('columns', '["top_ask_price"]');
+       elem.setAttribute('aggregates', '{"stock":"distinct_count","top_ask_price":"avg","top_bid_price":"avg","timestamp":"distinct_count"}');
++      elem.load(this.table);
+     }
+   }
+ 
+-- 
+2.24.0.windows.2
+
